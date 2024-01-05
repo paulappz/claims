@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Custodian.Claims.props" />
+</Project>
