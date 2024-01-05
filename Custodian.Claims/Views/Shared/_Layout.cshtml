@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Custodian.Claims</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Custodian.Claims.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar" style="background-color: #a50505;">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="https://custodianplc.com.ng/img/logo-white.png" alt="custodian logo" height="50">
+                </a>
+            </div>
+        </nav>
+        <section class="page-header b-bordered t-bordered hpadding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 d-flex m-0 justify-content-between">
+                        <h1 class="title">Caims</h1>
+                        <nav class="c-breadcrumb-1 -style-icons pull-right nav-nav">
+                            <ol class="c-breadcrumb-1-inner">
+                                <li class="c-breadcrumb-1-item">
+                                    <a href="https://custodianplc.com.ng" class="c-breadcrumb-1-link">
+                                        <i class="c-breadcrumb-1-icon fa fa-home text-dark" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="c-breadcrumb-1-item">
+                                    <a href="#" class="c-breadcrumb-1-link">
+                                        <i class="c-breadcrumb-1-icon fa fa-file-text-o" aria-hidden="true"></i>
+                                        Caims
+                                    </a>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <div class="container">
+        <main class="form-sha">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/c5581513cc.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

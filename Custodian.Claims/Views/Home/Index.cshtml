@@ -1,0 +1,71 @@
+﻿
+<div class="tabs mt-5">
+	<div class="tab active btn-5" id="submitClaim" onclick="showTab('submitClaim')">
+		<i class="fa fa-file-text-o"></i>
+		Submit Claim
+	</div>
+	<div class="tab btn-5" id="checkStatus" onclick="showTab('checkStatus')">
+		<i class="fa fa-search"></i>
+		Check Status
+	</div>
+</div>
+
+<form id="submitClaimForm" class="active" method="post" asp-antiforgery="true">
+	<input type="text" id="policyNumber" placeholder="Enter policy number" name="policyNumber" required>
+
+	<input type="text" id="emailAddress" placeholder="Enter email adress" name="emailAddress" required>
+	
+	<input type="text" id="phoneNumber" placeholder="Enter phone number" name="phoneNumber" required>
+
+	<textarea id="claimDescription" placeholder="Enter claim description" name="claimDescription"></textarea>
+	<div class="d-flex justify-content-end">
+		<button id="submitClaimBtn" class="submitForm px-5 py-2">
+			<i class="fas fa-check-circle"></i> Submit
+		</button>
+	</div>
+</form>
+
+<form id="checkStatusForm" method="post" asp-antiforgery="true">
+	<input type="text" id="claimNumber" placeholder="Enter Claim number" name="claimNumber" required>
+	<div class="d-flex justify-content-end">
+		<button id="checkStatusBtn" class="submitForm px-5 py-2">
+			<i class="fas fa-check-circle"></i> Submit
+		</button>
+	</div>
+</form>
+<div id="processingModal" style="position: fixed; height: 100vh; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden !important; background-color: rgba(4, 1, 0, 0.11); z-index: 2000; display: none !important; justify-content: center; align-items: center">
+	<div class="p-5 m-5 container d-flex align-items-center justify-content-center" style="background-color: white; position: relative; width: 300px; height:300px">
+		<div>
+			<h2>Processing</h2>
+			<div class="spinner"></div>
+		</div>
+	</div>
+</div>
+
+<div id="modal"class="form-sha"  style="position: fixed; height: 100vh; top: 0; bottom: 0; left: 0; right: 0; overflow: hidden !important; background-color:rgba(4, 1, 0, 0.11); z-index: 1000; display: none; justify-content: center; align-items: center;">
+	<div class="p-5 m-5 container" style="background-color: white; position: relative;">
+		<div style="position: absolute; top: 10px; right: 10px; cursor: pointer;">
+			<span onclick="closeModal()">
+				<i class="fas fa-times"></i> 
+			</span>
+		</div>
+		<h2 class="claim-status-heading">Claim Status</h2>
+		<table>
+				<thead>
+					<tr>
+						<th>Claim Number</th>
+						<th>Status</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="policyNumber">123456</td>
+						<td id="status" class="status-approved">Approved</td>
+						<td id="ceatedAt">2024-01-03</td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+</div>
+
